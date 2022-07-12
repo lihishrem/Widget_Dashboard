@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,500;1,100;1,200&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,500;1,100;1,200&family=Shadows+Into+Light&display=swap');
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.connectWalletCompDiv{
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px;
+  gap: 40px;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%); /* Firefox */
+  -ms-transform: translate(-50%, -50%);  /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Safari and Chrome*/
+  -o-transform: translate(-50%, -50%); /* Opera */
+  transform: translate(-50%, -50%);
+  background-color: #E9ECEF;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+
+.connectWalletLabel{
+  font-family: 'Shadows Into Light';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 0.05em;
+  color: #060707;
+}
+
+.flexRow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.WalletBtn{
+  color: #E5E5E5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-self: center;
+  padding: 10px 16px;
+  gap: 12px;
+  width: 269px;
+  height: 66px;
+  background: #060707;
+  border: 1px solid #060707;
+  box-shadow: 0px 1px 6px rgba(180, 185, 199, 0.25);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.widgetBox{
+  background-color: pink;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: max-content;
+  padding: 20px;
+  margin: 20px;
+}
+
+.addWidgetBtn{
+  margin: 20px;
+  color: #060707;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-self: center;
+  padding: 5px 5px;
+  gap: 12px;
+  width: 220px;
+  height: 45px;
+  background: #E5E5E5;
+  border: 1px solid #c0cbcb42;
+  box-shadow: 0px 1px 6px rgba(180, 185, 199, 0.25);
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
