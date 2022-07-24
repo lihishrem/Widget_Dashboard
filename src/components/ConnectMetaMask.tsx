@@ -8,7 +8,7 @@ import { getMyWidgetsBySignature } from "../store/reducer/widgetSlice";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { updateSignature } from "../store/reducer/signatureSlice";
-import { getCookie, setCookie } from "../utils/cookiesUtils";
+// import { getCookie, setCookie } from "../utils/cookiesUtils";
 import { MyWidgets } from "./MyWidgets";
 
 declare let window: any;
@@ -16,14 +16,15 @@ declare let window: any;
 export const ConnectMetaMask: FC<{}> = () => {
   const { ethereum } = window;
   const [isMetaConnected, setIsMetaConnected] = useState(false);
+  const [signature, setSignature] = useState("");
   const { activate, account, chainId, library, active } = useWeb3React();
   const dispatch = useDispatch();
   let navigate = useNavigate();
   // const { widgets } = useSelector((state: any) => state.widgets);
-  const { signature } = useSelector((state: any) => state.signature);
-  // console.log("widgets", widgets);
-  console.log("signature", signature);
-  console.log("account changed", account);
+  // const { signature } = useSelector((state: any) => state.signature);
+  // // console.log("widgets", widgets);
+  // console.log("signature", signature);
+  // console.log("account changed", account);
 
   useEffect(() => {
     if (isMetaConnected) {
@@ -35,6 +36,7 @@ export const ConnectMetaMask: FC<{}> = () => {
         let signature = await sign(account);
         console.log("the signature now is:", signature);
         if (signature !== null || signature !== undefined || signature !== "") {
+          setSignature(signature);
           dispatch(updateSignature(signature));
           //navigate("/MyWidgets");
         }
