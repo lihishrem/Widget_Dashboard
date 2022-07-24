@@ -5,11 +5,13 @@ interface Props {
 }
 
 export const Widget: FC<Props> = ({ widgetId }) => {
-  const linkToEditor = `http://localhost:3001/?widget=true&wsettings=true&id=${widgetId}`;
+  const linkToEditor = `https://widget-staging.xp.network/?widget=true&wsettings=true&wid=${widgetId}`;
   const handleWidgetClick = () => {};
   return (
     <div className="widgetBox" onClick={handleWidgetClick}>
-      <a href={linkToEditor}>{widgetId}</a>
+      <a href={linkToEditor} target="_blank">
+        {widgetId}
+      </a>
     </div>
   );
 };

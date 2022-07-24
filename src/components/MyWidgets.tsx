@@ -9,7 +9,10 @@ import { Widget } from "./Widget";
 export const MyWidgets: FC<{}> = () => {
   //http://localhost:3001/?widget=true&wsettings=true
   //https://widget.xp.network/?widget=true&wsettings=true
-  const linkToWidget = "http://localhost:3001/?widget=true&wsettings=true";
+  //https://widget-staging.xp.network/?widget=true&wsettings=true
+  //http://localhost:3001/?widget=true&wsettings=true
+  const linkToWidget =
+    "https://widget-staging.xp.network/?widget=true&wsettings=true&wid=create";
   const dispatch = useDispatch();
   const { signature } = useSelector((state: any) => state.signature);
   const { widgets } = useSelector((state: any) => state.widgets.widgets);
@@ -37,10 +40,10 @@ export const MyWidgets: FC<{}> = () => {
           return <Widget key={index} widgetId={widget} />;
         })}
 
-        <a className="addWidgetBtn" href={linkToWidget}>
+        <a className="addWidgetBtn" href={linkToWidget} target="_blank">
           Add New Widget
         </a>
-        <Transactions />
+        {/* <Transactions /> */}
       </div>
     </>
   );

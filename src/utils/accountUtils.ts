@@ -4,7 +4,7 @@ import { getCookie, setCookie } from "./cookiesUtils";
 
 declare let window: any;
 
-export const MSG = "Please sign in order to see your widgets ";
+export const MSG = "Please sign in order to see your widgets";
 
 export const InjectedMetaMask: any = new InjectedConnector({
   supportedChainIds: [4, 1, 3, 5, 42, 137, 80001],
@@ -21,6 +21,8 @@ export const sign = async (account: string | null | undefined) => {
       let signer = provider.getSigner();
       console.log("setting a new cookie");
       signature = await signer.signMessage(MSG);
+      console.log("signature", signature);
+
       address = await signer.getAddress();
       console.log(address, signature);
       document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";

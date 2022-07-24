@@ -36,7 +36,7 @@ export const ConnectMetaMask: FC<{}> = () => {
         console.log("the signature now is:", signature);
         if (signature !== null || signature !== undefined || signature !== "") {
           dispatch(updateSignature(signature));
-          // navigate("/MyWidgets");
+          //navigate("/MyWidgets");
         }
       };
       signMessage().catch(console.error);
