@@ -1,25 +1,57 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 import imgg from "../../assets/images/Frame 2741.png";
 
 interface Props {
-  widgetId: string;
+  widget: {
+    widgetId: string;
+    transactions?: number;
+    widgetName: string;
+    createdAt: string;
+    // children?: JSX.Element|JSX.Element[];
+  };
 }
 
-export const Widget: FC<Props> = ({ widgetId }) => {
-  const linkToEditor = `https://widget-staging.xp.network/?widget=true&wsettings=true&wid=${widgetId}`;
+export const Widget: FC<Props> = ({ widget }) => {
+  const src = "https://widget.xp.network?wid=";
+  const linkToEditor = `https://widget-staging.xp.network/?widget=true&wsettings=true&wid=${widget.widgetId}`;
+  const [iframeSrc, setIframeSrc] = useState("");
+  const [creationDate, setcreationDate] = useState<Date>();
 
-  console.log("widget comppppppp",widgetId);
-  
+  useEffect(() => {
+    let date = new Date(widget.createdAt);
+    setcreationDate(date);
+    console.log(date, "dateeee");
+  }, [widget]);
+
+  useEffect(() => {
+    setIframeSrc(src + `${widget.widgetId}`);
+  }, [widget.widgetId]);
+
+  console.log("widget comppppppp", widget.transactions);
+
   const handleWidgetClick = () => {};
   return (
     <>
-      <div className="widgetBox">
+      <div className="widgetBox"> 
         <div className="leftWidgetBox">
-          <img src={imgg} style={{width:"96px"}}/>
-          {/* <iframe src='https://widget.xp.network?wid=62d57f9085a8e0368a0bf7e1' width="100%" height="100%" id="xpnetWidget"></iframe> */}
+          {/* <img src={imgg} style={{width:"96px"}}/> */}
+          {/* <div className="iframeDiv"> */}
+           <iframe
+              src={iframeSrc}
+              width="100%"
+              height="100%"
+              id={widget.widgetId}
+              className="iframe"
+            ></iframe>
+          {/* </div> */}
+
           <div className="flexColumn">
-            <label className="widgetTitle">Widget {widgetId}</label>
-            <label>180 Transactions | Created on Sep 9, 2022</label>
+            <label className="widgetTitle">Widget {widget.widgetId}</label>
+            <label>
+              {widget.transactions} Transactions | Created on{" "}
+              {widget.createdAt.slice(0, 10)}
+              {/* {creationDate ? creationDate : ""} */}
+            </label>
           </div>
         </div>
         <div className="rightWidgetBox">
