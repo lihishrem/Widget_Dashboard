@@ -7,7 +7,7 @@ declare let window: any;
 export const MSG = "Please sign in order to see your widgets";
 
 export const InjectedMetaMask: any = new InjectedConnector({
-  supportedChainIds: [4, 1, 3, 5, 42, 137, 80001],
+  supportedChainIds: [4, 1, 3, 5, 42, 137, 80001,56],
 });
 
 export const sign = async (account: string | null | undefined) => {

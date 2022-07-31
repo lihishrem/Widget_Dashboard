@@ -1,0 +1,50 @@
+
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* padding: 0px 10px 10px 0px; */
+  isolation: isolate;
+  position: relative;
+  width: 68px;
+  height: 100%;
+  min-height: 100vh;
+  background: #282829;
+  gap: 15px;
+}
+
+.navIconContainer {
+  display: flex;
+  justify-content: center;
+  width: inherit;
+  width: 68px;
+  height: 70px;
+  background: #db233e;
+}
+
+.drawerIconsContainer {
+  display: flex;
+  flex-direction: column;
+  /* padding: 0px 10px 10px 0px; */
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.iconBox {
+  gap: 16px;
+  width: 68px !important;
+  height: 44px !important;
+  background: #282829;
+  border: none;
+  cursor: pointer;
+  /* background-image: url("../../assets/images/Nav icons/all widgets.svg"); */
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.iconBox:hover {
+  background: #343435;
+}

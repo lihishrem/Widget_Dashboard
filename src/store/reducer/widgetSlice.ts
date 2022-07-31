@@ -7,17 +7,16 @@ import {
 } from "../../utils/axios/axios";
 
 export const getMyWidgetsBySignature: any = createAsyncThunk(
-  "getUser/get",
+  "getUserWidgets/get",
   async (user: any) => {
     const { signature, address } = user;
     const data = await getMethod(
-      `getUser?signature=${signature}&address=${address}`
+      `getUserWidgets/?&signature=${signature}&address=${address}`
     ).catch((err) => err.response.data);
     console.log("user data from get req", data.data);
     return data.data;
   }
 );
-
 
 // export const getWidgetsById: any = createAsyncThunk(
 //   "getUser/get",
@@ -49,6 +48,7 @@ const widgetsSlice = createSlice({
     ) => {},
     [getMyWidgetsBySignature.fulfilled]: (state: IUserWidgets, action: any) => {
       state.widgets = action.payload;
+      console.log("state widgets", state.widgets);
     },
     [getMyWidgetsBySignature.rejected]: (
       state: IUserWidgets,
