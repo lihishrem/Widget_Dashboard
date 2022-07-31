@@ -304,4 +304,6 @@
   transform: scale(0.2);
   border: none;
   left: -170px;
+  cursor: not-allowed;
+  pointer-events: none;
 }
