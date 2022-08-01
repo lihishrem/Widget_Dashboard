@@ -1,7 +1,11 @@
+import { Menu, MenuButton, MenuItem, SubMenu } from "@szhsin/react-menu";
+import '@szhsin/react-menu/dist/index.css';
+import '@szhsin/react-menu/dist/transitions/slide.css';
 import { useWeb3React } from "@web3-react/core";
 import React, { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { getMyWidgetsBySignature } from "../../store/reducer/widgetSlice";
 import { AddWidget } from "./AddWidget";
 import { EmptyWidgets } from "./EmptyWidgets";
@@ -15,6 +19,7 @@ export const MyWidgets: FC<{}> = () => {
     "https://widget-staging.xp.network/?widget=true&wsettings=true&wid=create";
   const [showAddWidget, setShowAddWidget] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { signature } = useSelector((state: any) => state.signature);
   const { widgets } = useSelector((state: any) => state.widgets);
   const { account, active } = useWeb3React();
@@ -22,8 +27,16 @@ export const MyWidgets: FC<{}> = () => {
   console.log("account changed my widgets", account);
 
   useEffect(() => {
+    if (window.performance && !active) {
+      if (performance.navigation.type == 1) {
+        navigate("/");
+      }
+    }
+  }, []);
+
+  useEffect(() => {
     console.log("uef", account, signature);
-    if (account) {
+    if (account || active) {
       try {
         dispatch(
           getMyWidgetsBySignature({
@@ -56,7 +69,14 @@ export const MyWidgets: FC<{}> = () => {
         ) : (
           <div className="widgetsBox" style={{ paddingBottom: "34px" }}>
             <div className="buttonsBox">
-              <button className="showAllBtn">Show All</button>
+              {/* <button className="showAllBtn">Show All</button> */}
+              <Menu menuButton={<MenuButton className="showAllBtn">Show All</MenuButton>} transition >
+                <MenuItem>Active widgets</MenuItem>
+                <MenuItem>Suspended widgets</MenuItem>
+                <MenuItem onClick={() => console.log("Print clicked")}>
+                  All widgets...
+                </MenuItem>
+              </Menu>
               <button
                 className="createWidgetBtn"
                 onClick={() => setShowAddWidget(true)}

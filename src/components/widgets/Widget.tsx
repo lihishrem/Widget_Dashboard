@@ -1,5 +1,8 @@
+import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
 import React, { FC, useEffect, useState } from "react";
 import imgg from "../../assets/images/Frame 2741.png";
+import more from "../../assets/images/moreArrow.svg";
+
 
 interface Props {
   widget: {
@@ -64,7 +67,17 @@ export const Widget: FC<Props> = ({ widget }) => {
             Edit widget
             {/* {widgetId} */}
           </a>
-          <button>More</button>
+          <Menu menuButton={<MenuButton className="editBtn">More &nbsp; <img src={more}/>
+          </MenuButton>} transition >
+                <MenuItem>Suspend widget</MenuItem>
+                <MenuItem>Copy widget link</MenuItem>
+                <MenuItem onClick={() => console.log("Print clicked")}>
+                Rename widget
+                </MenuItem>
+                <MenuItem onClick={() => console.log("Print clicked")}>
+                Delete widget
+                </MenuItem>
+              </Menu>
         </div>
       </div>
       <label className="divider" />

@@ -39,6 +39,7 @@ export const AddWidget: FC<FuncProps> = (props) => {
           href={`${linkToWidget}&name=${widgetName}`}
           target="_blank"
           className="createWidgetBtn"
+          onClick={handleClose}
         >
           Add Widget
         </a>

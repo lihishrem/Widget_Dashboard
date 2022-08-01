@@ -2253,6 +2253,14 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
+"@szhsin/react-menu@^3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@szhsin/react-menu/-/react-menu-3.1.2.tgz#3a791e7e6c672d113c298985bec5185e9c7aa8a7"
+  integrity sha512-NUnU429a3jXtRD4xxk8EsR4yRSuhZPWAkI+4P4K63LQPUZGVE7adVKtEmlyOpd8CRQ7aoUz1ZLr1VmR1nZi6GQ==
+  dependencies:
+    prop-types "^15.7.2"
+    react-transition-state "^1.1.4"
+
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
@@ -11513,7 +11521,7 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.8.1:
+prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -11891,6 +11899,11 @@ react-table@^7.8.0:
   version "7.8.0"
   resolved "https://registry.yarnpkg.com/react-table/-/react-table-7.8.0.tgz#07858c01c1718c09f7f1aed7034fcfd7bda907d2"
   integrity sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA==
+
+react-transition-state@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-transition-state/-/react-transition-state-1.1.4.tgz#113224eaa27e0ff81661305e44d5e0348cdf61ac"
+  integrity sha512-6nQLWWx95gYazCm6OdtD1zGbRiirvVXPrDtHAGsYb4xs9spMM7bA8Vx77KCpjL8PJ8qz1lXFGz2PTboCSvt7iw==
 
 react@^18.2.0:
   version "18.2.0"
