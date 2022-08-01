@@ -86,7 +86,7 @@ export const MyWidgets: FC<{}> = () => {
             </div>
             <label className="divider" />
             <div className="widgetsContainer">
-              {widgets?.slice(0, 4).map((widget: any, index: number) => {
+              {widgets?.map((widget: any, index: number) => {
                 return <Widget key={index} widget={widget} />;
               })}
             </div>

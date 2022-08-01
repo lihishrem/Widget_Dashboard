@@ -18,7 +18,7 @@ export const Nav: FC<{}> = () => {
         <button className="iconBox" onClick={() => navigate("/myWidgets")}>
           <img src={allWidgets} />
         </button>
-        <button className="iconBox" onClick={() => navigate("/")}>
+        <button className="iconBox" onClick={() => navigate("/bridgeReporting")}>
           <img src={reporting} />
         </button>
         <button className="iconBox">

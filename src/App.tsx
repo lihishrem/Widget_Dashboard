@@ -11,6 +11,7 @@ import { sign } from "./utils/accountUtils";
 import { useWeb3React } from "@web3-react/core";
 import { useDispatch } from "react-redux";
 import { updateSignature } from "./store/reducer/signatureSlice";
+import { MainReporting } from "./components/bridgeReporting/MainReporting";
 
 declare let window: any;
 
@@ -47,6 +48,7 @@ export const App: FC<{}> = () => {
         {/* <Route path="/" element={<Container />} /> */}
         {/* <Route path="/" element={<MyWidgets />} /> */}
         <Route path="/MyWidgets" element={<Main />} />
+        <Route path="/BridgeReporting" element={<MainReporting />} />
       </Routes>
       {/* </div> */}
     </div>
