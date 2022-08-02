@@ -1,0 +1,156 @@
+.wraper {
+  width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.welcomeLabel {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+thead tr {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 0px;
+  width: 1080px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 6px 6px 0px 0px;
+  border: none;
+}
+
+th {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0px 10px 16px !important;
+  gap: 10px;
+  border-bottom: 0px !important;
+  border-right: 0px !important;
+}
+
+table {
+  border: none !important;
+}
+
+tr {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 0px;
+  width: 1080px;
+  height: 72px;
+  border: 1px solid lightgray;
+  background: #ffffff;
+}
+
+.copyImgIcon {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: inherit;
+  align-items: center;
+}
+
+.buttonsRow {
+  display: flex;
+  flex-direction: row;
+}
+.reportBtn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 16px;
+  gap: 4px;
+  height: 32px;
+  background: #f6f6f6;
+  border: 1px solid #ced5e0;
+  border-radius: 2px 0px 0px 2px;
+}
+
+.reportBtn:focus {
+  background: #eeeef2;
+  border: 1px solid #ced5e0;
+}
+
+.reportDetails {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  /* gap: 30px; */
+
+  /* width: 449px;
+  height: 256px; */
+
+  background: #ffffff;
+  box-shadow: 0px 1px 15px rgba(47, 48, 50, 0.08);
+  border-radius: 6px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 119%;
+  padding: 16px 0px 16px;
+}
+
+.reportDetailsRow {
+  width: 417px;
+  padding: 16px 16px 10px;
+}
+
+.iconName {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.line {
+  width: 417px;
+  height: 1px;
+  background: #ebecef;
+  align-self: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.transactionBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  /* padding: 18px 16px; */
+
+  width: 607px;
+  height: 253.95px;
+
+  background: #ffffff;
+  box-shadow: 0px 1px 15px rgba(47, 48, 50, 0.08);
+  border-radius: 6px;
+}
+
+.statusLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 6px 6px 0px;
+  gap: 4px;
+}

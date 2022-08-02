@@ -1,6 +1,6 @@
 import { Menu, MenuButton, MenuItem, SubMenu } from "@szhsin/react-menu";
-import '@szhsin/react-menu/dist/index.css';
-import '@szhsin/react-menu/dist/transitions/slide.css';
+import "@szhsin/react-menu/dist/index.css";
+import "@szhsin/react-menu/dist/transitions/slide.css";
 import { useWeb3React } from "@web3-react/core";
 import React, { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -26,29 +26,29 @@ export const MyWidgets: FC<{}> = () => {
   console.log("widgetssssss (my widgets comp)------------->", widgets);
   console.log("account changed my widgets", account);
 
-  useEffect(() => {
-    if (window.performance && !active) {
-      if (performance.navigation.type == 1) {
-        navigate("/");
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.performance && !active) {
+  //     if (performance.navigation.type == 1) {
+  //       navigate("/");
+  //     }
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    console.log("uef", account, signature);
-    if (account || active) {
-      try {
-        dispatch(
-          getMyWidgetsBySignature({
-            signature: signature,
-            address: account,
-          })
-        );
-      } catch (e) {
-        console.log(e);
-      }
-    }
-  }, [account, signature]);
+  // useEffect(() => {
+  //   console.log("uef", account, signature);
+  //   if (account || active) {
+  //     try {
+  //       dispatch(
+  //         getMyWidgetsBySignature({
+  //           signature: signature,
+  //           address: account,
+  //         })
+  //       );
+  //     } catch (e) {
+  //       console.log(e);
+  //     }
+  //   }
+  // }, [account, signature]);
 
   const handleCloseAdd = (toClose: boolean): void => {
     setShowAddWidget(false);
@@ -70,7 +70,12 @@ export const MyWidgets: FC<{}> = () => {
           <div className="widgetsBox" style={{ paddingBottom: "34px" }}>
             <div className="buttonsBox">
               {/* <button className="showAllBtn">Show All</button> */}
-              <Menu menuButton={<MenuButton className="showAllBtn">Show All</MenuButton>} transition >
+              <Menu
+                menuButton={
+                  <MenuButton className="showAllBtn">Show All</MenuButton>
+                }
+                transition
+              >
                 <MenuItem>Active widgets</MenuItem>
                 <MenuItem>Suspended widgets</MenuItem>
                 <MenuItem onClick={() => console.log("Print clicked")}>

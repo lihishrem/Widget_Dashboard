@@ -2,24 +2,25 @@ import React, { FC, useState } from "react";
 import closeBtn from "../../assets/images/closeBtn.svg";
 
 interface FuncProps {
-  closeAddWidget(toClose: boolean): void;
+  closeUpdateWidget(toClose: boolean): void;
 }
 
-export const AddWidget: FC<FuncProps> = (props) => {
+export const UpdateWidget: FC<FuncProps> = (props) => {
   const [widgetName, setWidgetName] = useState("");
-  const [websiteAddress, setWebsiteAddress] = useState("");
-
-  const linkToWidget =
-    "https://widget-staging.xp.network/?widget=true&wsettings=true&wid=create";
 
   const handleClose = () => {
-    props.closeAddWidget(true);
+    props.closeUpdateWidget(true);
+  };
+
+  const handleUpdate = () => {
+    //to do: update api call with the name updated
+    handleClose();
   };
 
   return (
     <div className="addWidgetBox">
       <div className="addWidgetTitle">
-        <label className="selfCenter">Add new widget</label>
+        <label className="selfCenter">Update widget name</label>
         <button className="closeBtn" onClick={handleClose}>
           <img src={closeBtn} />
         </button>
@@ -33,27 +34,21 @@ export const AddWidget: FC<FuncProps> = (props) => {
           onChange={(e) => setWidgetName(e.target.value)}
         />
       </div>
-      <div className="inputAddWidget">
-        Website address
-        <input
-          type="text"
-          placeholder="https://"
-          className="inputBox"
-          onChange={(e) => setWebsiteAddress(e.target.value)}
-        />
-      </div>
       <div className="flexRowBtns">
         <button className="canceLBtn" onClick={handleClose}>
           Cancel
         </button>
-        <a
+        {/* <a
           href={`${linkToWidget}&name=${widgetName}`}
           target="_blank"
           className="createWidgetBtn"
           onClick={handleClose}
-        >
-          Add Widget
-        </a>
+        > */}
+        <button className="createWidgetBtn" onClick={handleUpdate}>
+          Update Widget
+        </button>
+
+        {/* </a> */}
       </div>
     </div>
   );
